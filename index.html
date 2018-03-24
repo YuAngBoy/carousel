@@ -140,7 +140,7 @@
             </li>
         </transition-group>
         <div class="bullet">
-            <span v-for="(item,index) in img.length" :class="{'active':index === mark}" @click="change(index)" :key="index"></span>
+            <span v-for="(item,index) in img.length" :class="{'active':index === mark}" @click="change(index, mark)" :key="index"></span>
         </div>
         <div class="switch">
             <span class="prev" @click="prev">&lt;</span>
@@ -172,7 +172,7 @@
                 time: null
             },
             methods: {   //添加方法
-                change(i) {
+                change(i, m) {
                     if (i > m) {
                         this.names = 'left';
                     } else if (i < m) {
