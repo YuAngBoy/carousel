@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播</title>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <style type="text/css">
+        body {
+            background-color: #2A2A2A
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .carousel {
+            width: 500px;
+            height: 300px;
+            overflow: hidden;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .carousel ul {
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel ul li {
+            position: absolute;
+        }
+
+        .carousel ul li a img {
+            width: 500px;
+            height: 300px;
+        }
+
+        .bullet {
+            position: absolute;
+            font-size: 0;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -42px;
+        }
+
+        .bullet span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #ffffff;
+            margin-left: 15px;
+            border-radius: 10px;
+        }
+
+        .bullet span:first-child {
+            margin-left: 0;
+        }
+
+        .switch {}
+
+        .switch span {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, .1);
+            font-size: 20px;
+            color: #ffffff;
+            top: 50%;
+            margin-top: -25px;
+            cursor: pointer;
+            font-family: "宋体";
+        }
+
+        .switch span:hover {
+
+            background-color: rgba(0, 0, 0, .5);
+
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .active {
+            background-color: red !important;
+        }
+
+        .left-enter-active{
+            transform:translateX(0);
+            transition:all 1s ease;
+        }
+        .left-leave-active{
+            transform:translateX(-100%);
+            transition:all 1s ease
+        }
+        .left-enter{
+            transform:translateX(100%);
+        }
+        .left-leave{
+            transform:translateX(0);
+        }
+        .right-enter-active {
+            transform: translate3d(0%);
+            transition: all 1s ease;
+        }
+        .right-leave-active {
+            transform: translateX(100%);
+            transition: all 1s ease;
+        }
+        .right-enter {
+            transform: translateX(-100%);
+        }
+        .right-leave {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="color: aliceblue;text-align: center;padding-top: 50px">vue 轮播图</h3>
+    <!--轮播结构-->
+    <div class="carousel" @mouseenter="enter" @mouseleave="leave">
+        <transition-group tag="ul" :name="names">
+            <li v-for='(image,index) in img' :key='index' v-show="index === mark">
+                <a href="javascript:;">
+                    <img :src="image">
+                </a>
+            </li>
+        </transition-group>
+        <div class="bullet">
+            <span v-for="(item,index) in img.length" :class="{'active':index === mark}" @click="change(index)" :key="index"></span>
+        </div>
+        <div class="switch">
+            <span class="prev" @click="prev">&lt;</span>
+            <span class="next" @click="next">&gt;</span>
+        </div>
+    </div>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script>
+
+        /*
+            轮播逻辑
+            效果 ==> 图片显示第几章的时候，下面的bullet的第几个就要改变成active
+                     点击相应的bullet可以切换到对应的图片
+        */
+
+        //初始化一个vue实例然后挂载到父元素上，并设定数据为图片的数组，以及后面计数用的mark，mark初始值为0
+        var vm = new Vue({
+            el: '.carousel',
+            data: {
+                names: 'left',
+                mark: 0,
+                img: [
+                    'images/a1.png',
+                    'images/a2.png',
+                    'images/a3.png',
+                    'images/a4.png'
+                ],
+                time: null
+            },
+            methods: {   //添加方法
+                change(i) {
+                    this.mark = i;
+                },
+                prev() {
+                    this.names = 'right';
+                    this.mark--;
+                    if (this.mark === -1) {
+                        this.mark = 3;
+                        return
+                    }
+                },
+                next() {
+                    this.names = 'left';
+                    this.mark++;
+                    if (this.mark === 4) {
+                        this.mark = 0;
+                        return
+                    }
+                },
+                autoPlay() {
+                    this.names = 'left';
+                    this.mark++;
+                    if (this.mark === 4) {
+                        this.mark = 0;
+                        return
+                    }
+                },
+                play() {
+                    this.time = setInterval(this.autoPlay, 3000);
+                },
+                enter() {
+                    clearInterval(this.time);
+                },
+                leave() {
+                    this.play();
+                }
+            },
+            created() {
+                this.play()
+            }
+        })
+    </script>
+</body>
+
+</html>
