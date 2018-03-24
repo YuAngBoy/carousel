@@ -173,6 +173,13 @@
             },
             methods: {   //添加方法
                 change(i) {
+                    if (i > m) {
+                        this.names = 'left';
+                    } else if (i < m) {
+                        this.names = 'right';
+                    } else {
+                        return;
+                    }
                     this.mark = i;
                 },
                 prev() {
