@@ -62,8 +62,6 @@
             margin-left: 0;
         }
 
-        .switch {}
-
         .switch span {
             position: absolute;
             width: 50px;
@@ -99,11 +97,11 @@
 
         .left-enter-active{
             transform:translateX(0);
-            transition:all 1s ease;
+            transition:all .5s ease;
         }
         .left-leave-active{
             transform:translateX(-100%);
-            transition:all 1s ease
+            transition:all .5s ease
         }
         .left-enter{
             transform:translateX(100%);
@@ -113,11 +111,11 @@
         }
         .right-enter-active {
             transform: translate3d(0%);
-            transition: all 1s ease;
+            transition: all .5s ease;
         }
         .right-leave-active {
             transform: translateX(100%);
-            transition: all 1s ease;
+            transition: all .5s ease;
         }
         .right-enter {
             transform: translateX(-100%);
@@ -147,7 +145,6 @@
             <span class="next" @click="next">&gt;</span>
         </div>
     </div>
-    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
     <script src="js/vue.min.js"></script>
     <script>
 
@@ -164,10 +161,10 @@
                 names: 'left',
                 mark: 0,
                 img: [
-                    'images/a1.png',
-                    'images/a2.png',
-                    'images/a3.png',
-                    'images/a4.png'
+                    'images/pic1.jpg',
+                    'images/pic2.jpg',
+                    'images/pic3.jpg',
+                    'images/pic4.jpg'
                 ],
                 time: null
             },
