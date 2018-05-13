@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>个人简历</title>
+        <style type="text/css">
+            /*大家好，我叫於昂*/
+            * {
+                transition: all .3s;
+            }
+            html, body {
+                height: 100%;
+                overflow: hidden;
+                perspective: 1000px;
+            }
+            #show {
+                display: inline-block; 
+                width:45%;
+                height:70%;
+                background:#000; 
+                overflow: auto;
+                border: 1px solid white;
+            }
+            span {
+                display: block;
+            }
+            .me {
+                width:100px;
+                height: 150px;
+            }
+            #show-2 {
+                display: none; 
+                width: 50%; 
+                height: 70%; 
+                padding: 1em;
+                box-sizing: border-box;
+                background: #ccc;
+                overflow: auto;
+                margin-left: 3%;
+                border: 1px solid white;
+            }
+            .c-green {
+                color: rgb(130,150,0);
+            }
+            .c-yellow {
+                color: yellow;
+            }
+            .c-brown {
+                color: rgb(190,140,0);
+            }
+            .styleEditor-left {
+                -webkit-transition: none;
+                transition: none;
+                -webkit-transform: rotateY(10deg) translateZ(-50px);
+                transform: rotateY(10deg) translateZ(-50px);
+            }
+            .styleEditor-right {
+                -webkit-transition: none;
+                transition: none;
+                -webkit-transform: rotateY(-10deg) translateZ(-50px);
+                transform: rotateY(-10deg) translateZ(-50px);
+            }
+            .bg-blue {
+                background: rgb(0,64,64);
+            }
+            #show-3 {
+                display: none;
+                width: 100%;
+                height: 30%;
+                background: #000;
+                box-sizing: border-box;
+                border: 1px solid white;
+                overflow: auto;
+                color: green;
+                padding: 10px;
+            }
+            #show-3 ul {
+                list-style: none;
+            }
+            #show-3 ul li::before {
+                 content: '☞   ';
+                 color: red;
+            }
+            .initShow {
+                width: 100%!important; 
+                height: 100%!important;
+                background: white!important;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="show">
+            <!-- <pre style="font-size: 18px;">
+            <label class="introduction">/*大家好，我叫於昂*/</label>
+            <label class="introduction">/*我来写一份简历*/</label>
+            <label class="introduction">/*www.yuang.site*/</label>
+            <label  class="c-green">*</label> <label class="c-yellow">{</label>
+                <label class="c-brown">transition: all .1s;
+            }
+            <label  class="c-green">html, body</label> <label class="c-yellow">{</label>
+                <label class="c-brown">height: 100%;
+                overflow: hidden;
+                perspective: 1000px;
+            }
+            <label  class="c-green">#show</label> <label class="c-yellow">{</label>
+                <label class="c-brown">display: inline-block; 
+                width:45%;
+                height:70%;
+                background:#000; 
+                overflow: auto;
+                border: 1px solid white;
+            }
+            <label  class="c-green">span</label> <label class="c-yellow">{</label>
+                <label class="c-brown">display: block;
+            }
+            <label  class="c-green">#show-2</label> <label class="c-yellow">{</label>
+                <label class="c-brown">display: inline-block; 
+                width: 50%; 
+                height: 70%; 
+                padding: 1em;
+                box-sizing: border-box;
+                background: #ccc;
+                overflow: auto;
+                margin-left: 3%;
+                border: 1px solid white;
+            }
+            <label  class="c-green">.c-green</label> <label class="c-yellow">{</label>
+                <label class="c-brown">color: rgb(130,150,0);
+            }
+            <label  class="c-green">.c-yellow</label> <label class="c-yellow">{</label>
+                <label class="c-brown">color: yellow;
+            }
+            <label  class="c-green">.c-brown</label> <label class="c-yellow">{</label>
+                <label class="c-brown">color: rgb(190,140,0);
+            }
+            <label  class="c-green">.styleEditor-left</label> <label class="c-yellow">{</label>
+                <label class="c-brown">-webkit-transition: none;
+                transition: none;
+                -webkit-transform: rotateY(10deg) translateZ(-100px) ;
+                transform: rotateY(10deg) translateZ(-100px) ;
+            }
+            <label  class="c-green">.styleEditor-right</label> <label class="c-yellow">{</label>
+                <label class="c-brown">-webkit-transition: none;
+                transition: none;
+                -webkit-transform: rotateY(-10deg) translateZ(-100px) ;
+                transform: rotateY(-10deg) translateZ(-100px) ;
+            }
+            <label  class="c-green">#show-3</label> <label class="c-yellow">{</label>
+                <label class="c-brown">width: 100%;
+                height: 30%;
+                background: #000;
+                box-sizing: border-box;
+                border: 1px solid white;
+                overflow: auto;
+            }
+            <label  class="c-green">#show-3 ul</label> <label class="c-yellow">{</label>
+                <label class="c-brown">list-style: none;
+            }
+            <label  class="c-green">#show-3 ul li::before</label> <label class="c-yellow">{</label>
+                <label class="c-brown">content: '☞   ';
+                 color: red;
+            }
+            </pre> -->
+        </div>
+        <div id="show-2" class="styleEditor-right">
+            <!-- <pre>
+                <h2>大家好，我叫於昂</h2>
+                <span>性别：男</span>
+                <span>年龄：21</span>
+                <span>这货是我：↓↓</span>
+                <span><img src="./images/me.jpg" class="me"></span>
+                <span>地址：湖北省武汉市江夏区光谷大道117号</span>
+                <h2>个人博客：<a href="http://yuang.site" target="_blank">www.yuang.site</a></h2>
+                <span>Github: <a href="https://github.com/YuAngBoy" target="_blank">https://github.com/YuAngBoy</a></span>
+                <h2>个人技能</h2>
+                <ol>
+                    <li>精通HTML5，css3，JavaScript，jQuery、vue.js等Web开发技术,熟知W3C标准。</li><br/>
+                    <li>熟练运用插件，select2，百度echarts图表等</li><br/>
+                    <li>擅长编写vue组件，如翻页、表格、模态框、左侧导航栏+头部导航配合vuex组件等等。</li><br/>
+                    <li>了解photoshop切图</li><br/>
+                    <li>会运用手机端weui、vux UI框架</li><br/>
+                    <li>熟练使用bootstrap，element-ui，iview，remark前端框架，以及Animate.css等第三方类库。</li><br/>
+                    <li>掌握ES6语法的使用</li><br/>
+                    <li>会运用linux、git向gitlab提交代码</li>
+                    <li>熟练运用sublime Text、visualSudio code等编辑工具</li><br/>
+                    <li>会搭建vue项目、vux手机端项目</li><br/>
+                    <li>了解java、python语言</li>
+                </ol>
+                <h2>工作经历</h2>
+                <span>工作经验：一年</span>
+                <span>工作职责：</span>
+                <ul>
+                    <li>根据UI的设计，完成前端页面的展现</li>
+                    <li>配合后台完成数据交互，实现动态布局</li>
+                    <li>满足业务需求的前提下，减少开发成本</li>
+                    <li>根据工作拓展，学习一些新的前端框架使用，提高自己能力</li>
+                </ul>
+                <h2>教育背景</h2>
+                <span>武汉软件工程职业学院</span>
+                <span>专业：软件技术</span>
+                <h2>产品设计</h2>
+                <ol>
+                    <li>湖北检验检疫项目（PC端  响应式）</li>
+                    <li>苏州市产品风险监测与处置系统（pc+手机端)</li>
+                    <li>威海项目投标demo</li>
+                    <li>质检舆情系统</li>
+                    <li>湖北省2017年服务质量顾客满意度调查问卷（手机端）</li>
+                    <li>武汉大学CEES报名系统</li>
+                    <li>质量抽检手机端（正在开发中）,已搭好vux手机端框架,正在开发中</li>
+                </ol>
+            </pre> -->
+        </div>
+        <div id="show-3">
+            <!-- <pre>
+                <span>自我评价：</span>
+                <ul>
+                    <li>本人性格外向，大学期间，担任过学习委员</li>
+                    <li>获得过奖学金，本着勤奋好学的观念，有着和web前端工程师一样的钻研精神</li>
+                    <li>善于与人交谈，这让我在开发中会更加顺利的完成团队合作任务</li>
+                    <li>曾经在第一次就职公司中获得过 优秀新员工 奖项，抱着一向负责任的态度，对工作一丝不苟，认真仔细</li>
+                    <li>我相信我一定会胜任贵公司的工作职位，得到贵公司的认可</li>
+                </ul>
+            </pre> -->
+        </div>
+        <script type="text/javascript">
+            window.onload = function() {
+                var show = document.getElementById('show');
+                var show2 = document.getElementById('show-2');
+                var show3 = document.getElementById('show-3');
+                show.classList.add('initShow');
+                var showContent = 
+                `<pre style="font-size: 18px;">
+            <label class="c-brown">/*大家好，我叫於昂*/</label>
+            <label class="c-brown">/*我来写一份简历*/</label>
+            <label class="c-brown">/*www.yuang.site*/</label>
+            <label  class="c-green">*</label> <label class="c-yellow">{</label>
+                <label class="c-brown">transition: all .1s;
+            }
+            <label  class="c-green">html, body</label> <label class="c-yellow">{</label>
+                <label class="c-brown">height: 100%;
+                overflow: hidden;
+                perspective: 1000px;
+            }
+            <label  class="c-green">#show</label> <label class="c-yellow">{</label>
+                <label class="c-brown">display: inline-block; 
+                width:45%;
+                height:70%;
+                background:#000; 
+                overflow: auto;
+                border: 1px solid white;
+            } /* 开始写简历 */
+            <label  class="c-green">span</label> <label class="c-yellow">{</label>
+                <label class="c-brown">display: block;
+            }
+            <label  class="c-green">#show-2</label> <label class="c-yellow">{</label>
+                <label class="c-brown">display: inline-block; 
+                width: 50%; 
+                height: 70%; 
+                padding: 1em;
+                box-sizing: border-box;
+                background: #ccc;
+                overflow: auto;
+                margin-left: 3%;
+                border: 1px solid white;
+            }
+            <label  class="c-green">.c-green</label> <label class="c-yellow">{</label>
+                <label class="c-brown">color: rgb(130,150,0);
+            }
+            <label  class="c-green">.c-yellow</label> <label class="c-yellow">{</label>
+                <label class="c-brown">color: yellow;
+            }
+            <label  class="c-green">.c-brown</label> <label class="c-yellow">{</label>
+                <label class="c-brown">color: rgb(190,140,0);
+            }
+            <label  class="c-green">.styleEditor-left</label> <label class="c-yellow">{</label>
+                <label class="c-brown">-webkit-transition: none;
+                transition: none;
+                -webkit-transform: rotateY(10deg) translateZ(-100px) ;
+                transform: rotateY(10deg) translateZ(-100px) ;
+            }
+            <label  class="c-green">.styleEditor-right</label> <label class="c-yellow">{</label>
+                <label class="c-brown">-webkit-transition: none;
+                transition: none;
+                -webkit-transform: rotateY(-10deg) translateZ(-100px) ;
+                transform: rotateY(-10deg) translateZ(-100px) ;
+            }
+            <label  class="c-green">#show-3</label> <label class="c-yellow">{</label>
+                <label class="c-brown">width: 100%;
+                height: 30%;
+                background: #000;
+                box-sizing: border-box;
+                border: 1px solid white;
+                overflow: auto;
+            }
+            <label  class="c-green">#show-3 ul</label> <label class="c-yellow">{</label>
+                <label class="c-brown">list-style: none;
+            }
+            <label  class="c-green">#show-3 ul li::before</label> <label class="c-yellow">{</label>
+                <label class="c-brown">content: '☞   ';
+                 color: red;
+            }
+            </pre>`;
+            var show2Content = 
+            `<pre>
+                <h2>大家好，我叫於昂</h2>
+                <span>性别：男</span>
+                <span>年龄：21</span>
+                <span>这货是我：↓↓</span>
+                <span><img src="./images/me.jpg" class="me"></span>
+                <span>地址：湖北省武汉市江夏区光谷大道117号</span>
+                <h2>个人博客：<a href="http://yuang.site" target="_blank">www.yuang.site</a></h2>
+                <span>Github: <a href="https://github.com/YuAngBoy" target="_blank">https://github.com/YuAngBoy</a></span>
+                <h2>个人技能</h2>
+                <ol>
+                    <li>精通HTML5，css3，JavaScript，jQuery、vue.js等Web开发技术,熟知W3C标准。</li><br/>
+                    <li>熟练运用插件，select2，百度echarts图表等</li><br/>
+                    <li>擅长编写vue组件，如翻页、表格、模态框、左侧导航栏+头部导航配合vuex组件等等。</li><br/>
+                    <li>了解photoshop切图</li><br/>
+                    <li>会运用手机端weui、vux UI框架</li><br/>
+                    <li>熟练使用bootstrap，element-ui，iview，remark前端框架，以及Animate.css等第三方类库。</li><br/>
+                    <li>掌握ES6语法的使用</li><br/>
+                    <li>会运用linux、git向gitlab提交代码</li>
+                    <li>熟练运用sublime Text、visualSudio code等编辑工具</li><br/>
+                    <li>会搭建vue项目、vux手机端项目</li><br/>
+                    <li>了解java、python语言</li>
+                </ol>
+                <h2>工作经历</h2>
+                <span>工作经验：一年</span>
+                <span>工作职责：</span>
+                <ul>
+                    <li>根据UI的设计，完成前端页面的展现</li>
+                    <li>配合后台完成数据交互，实现动态布局</li>
+                    <li>满足业务需求的前提下，减少开发成本</li>
+                    <li>根据工作拓展，学习一些新的前端框架使用，提高自己能力</li>
+                </ul>
+                <h2>教育背景</h2>
+                <span>武汉软件工程职业学院</span>
+                <span>专业：软件技术</span>
+                <h2>产品设计</h2>
+                <ol>
+                    <li>湖北检验检疫项目（PC端  响应式）</li>
+                    <li>苏州市产品风险监测与处置系统（pc+手机端)</li>
+                    <li>威海项目投标demo</li>
+                    <li>质检舆情系统</li>
+                    <li>湖北省2017年服务质量顾客满意度调查问卷（手机端）</li>
+                    <li>武汉大学CEES报名系统</li>
+                    <li>质量抽检手机端（正在开发中）,已搭好vux手机端框架,正在开发中</li>
+                </ol>
+            </pre>`;
+            var show3Content = 
+            `<pre><span>自我评价：</span><ul><li>本人性格外向，大学期间，担任过学习委员</li><li>获得过奖学金，本着勤奋好学的观念，有着和web前端工程师一样的钻研精神</li><li>善于与人交谈，这让我在开发中会更加顺利的完成团队合作任务</li><li>曾经在第一次就职公司中获得过 优秀新员工 奖项，抱着一向负责任的态度，对工作一丝不苟，认真仔细</li><li>我相信我一定会胜任贵公司的工作职位，得到贵公司的认可</li></ul></pre>`;
+                var i = 1;
+                var k = 1;
+                var j =1;
+                var done = null;
+                var done2 = null;
+                var done3 = null;
+                function showword() {
+                    var showlen = showContent.length;
+                    show.innerHTML = showContent.substr(0,i);
+                    show.scrollTop = show.scrollHeight;
+                    i++;
+                    if (i === 209) {
+                        show.classList.remove('initShow');
+                    }
+                    if (i === 400) {
+                        show.classList.add('styleEditor-left');
+                        document.body.classList.add('bg-blue');
+                    }
+                    if (i === 931) {
+                        clearInterval(done);
+                        show2.style.display = 'inline-block';
+                        done2 = setInterval(showword2,30);
+                    }
+                    if (i > showlen){
+                        clearInterval(done);
+                        show3.style.display = 'block';
+                        done3 = setInterval(showword3,20);
+                    }
+                }
+                function showword2() {
+                    var show2len = show2Content.length;
+                    show2.innerHTML = show2Content.substr(0, k);
+                    k++;
+                    show2.scrollTop = show2.scrollHeight;
+                    if (k > show2len) {
+                        clearInterval(done2);
+                        i += 1;
+                        done = setInterval(showword,10);
+                    }
+                }
+                function showword3() {
+                    var show3len = show3Content.length;
+                    show3.innerHTML = show3Content.substr(0, j);
+                    j++;
+                    show3.scrollTop = show3.scrollHeight;
+                    if (j > show3len) {
+                        clearInterval(done3);
+                    }
+                }
+                done = setInterval(showword,10);
+            }
+            
+        </script>
+        <!-- <script type="text/javascript">
+            var str=
+            `<h2>大家好，我叫於昂</h2>
+            <span>性别：男</span>
+            <span>年龄：21</span>
+            <span>地址：湖北省武汉市江夏区光谷大道117号</span>
+            <h2>个人博客：<a href="yuang.site">www.yuang.site</a></h2>
+            <span>Github: <a href="https://github.com/YuAngBoy">https://github.com/YuAngBoy</a></span>
+            <h2>个人技能</h2>
+            <ol>
+                <li>精通HTML5，css3，JavaScript，jQuery、vue.js等Web开发技术,熟知W3C标准。</li>
+                <li>熟练运用插件，select2，百度echarts图表等</li>
+            </ol>`;
+            var len=str.length;
+            var i=1;
+            function showword(){
+                var show = document.getElementById("show");
+                show.innerHTML=str.substr(0,i);
+                show.scrollTop = show.scrollHeight;
+                i++;
+                if(i>len){
+                clearInterval("done");
+                }
+            }
+            var done=setInterval("showword()",20);
+        </script> -->
+    </body>
+</html>
