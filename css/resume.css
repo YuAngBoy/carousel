@@ -1,0 +1,248 @@
+/* 基本css */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  color: #353535;
+}
+p {
+  line-height: 1.8em;
+  color: #353535;
+  margin: 0;
+}
+p a {
+  color: #c40b00;
+  text-decoration: none;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row [class*="col-"] {
+  position: relative;
+  padding-left: .7em;
+  padding-right: .7em;
+  box-sizing: border-box;
+}
+.row .col-l-4 {
+  flex: 33.333%;
+}
+.row .col-s-6 {
+  /* 分配50%的空间 */
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.row .col-m-8 {
+  -ms-flex: 0 0 66.6666%;
+  flex: 0 0 66.6666%;
+  max-width: 66.6666%;
+}
+.row .col-m-4 {
+  -ms-flex: 0 0 33.3333%;
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
+}
+.main {
+  box-sizing: border-box;
+}
+.main section {
+  position: relative;
+  padding: 5em 3em;
+}
+/* 左侧导航 */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  background: #4b4b4b;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.avatar {
+  width: 160px;
+  height: 160px;
+  margin: 2em auto;
+  background: skyblue;
+  border-radius: 50%;
+  border: 5px solid white;
+  transition: transform .5s;
+}
+.avatar img {
+  vertical-align: middle;
+  width: 100%;
+  height: auto; 
+  border-radius: 50%;
+}
+.avatar:hover {
+  transform: rotate(360deg);
+}
+nav {
+  display: flex;
+  flex-direction: column;
+}
+nav li {
+  padding: 1em;
+  list-style: none;
+  text-align: center;
+  transition: background .3s;
+}
+nav li:hover {
+  background: #353333;
+}
+nav li a {
+  display: block;
+  color: #fff;
+  width: 100%;
+  text-decoration: none;
+}
+/* 右边主体内容 */
+.main {
+  margin-left: 250px;
+}
+.title {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  padding: .2em 2em;
+  width: 230px;
+  background: #4b4b4b;
+  font-family: '楷体', sans-serif;
+  color: #fff;
+  box-sizing: border-box;
+}
+.title i {
+  float: left;
+  margin:.3em .5em;
+}
+/* 资料 */
+#info {
+  background: url(../images/bg-1.png) fixed;
+}
+/* 技能 */
+#skills {
+  background: #f8bd24;
+}
+.skills-icon {
+  background: #fff;
+  border-radius: 50%;
+  margin: 1em auto;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  box-shadow: 0 5px rgba(0, 0, 0, .3);
+}
+.skills-icon i {
+  font-size: 50px;
+  line-height: 100px;
+  transition: transform .5s;
+}
+.skills-icon:hover i {
+  transform: scale(1.5);
+}
+.skills-title {
+  text-align: center;
+}
+.skills-title p {
+  margin: 1em;
+}
+/* 个人作品 */
+#works {
+  background: url(../images/bg-2.png) fixed;
+}
+.work-item {
+  text-align: center;
+}
+.work-item p {
+  margin: 1em;
+}
+.work-item img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  margin: .5em 0;
+  transition: all .3s;
+}
+.work-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 3px 6px 6px rgba(0, 0, 0, .1);
+}
+/* 个人经历 */
+.timeline {
+  list-style: none;
+  margin-left: 1em;
+  padding-left: 1.5em;
+  border-left: 2px grey solid;
+}
+.timeline li {
+  line-height: 1.5em;
+  position: relative;
+  margin-bottom: 1.5em;
+}
+.timeline li::before {
+  content: "";
+  left: -2.3em;
+  width: 1.5em;
+  height: 1.5em;
+  display: block;
+  position: absolute;
+  background: #f8bd24;
+  border-radius: 50%;
+  transition: transform .3s;
+}
+.timeline li::before:hover {
+  transform: scale(1.2);
+}
+.story-img {
+  width: 100%;
+  height: auto;
+}
+/* 自我评价 */
+#selfEva {
+  background: url(../images/bg-2.png) fixed;
+}
+#selfEva img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+/* 返回顶部 */
+.backTop {
+  position: fixed;
+  background: url(../images/back_top1.png);
+  width: 150px;
+  height: 175px;
+  cursor: pointer;
+  z-index: 99;
+  bottom: 0;
+  right: 0;
+  display: none;
+  transition: transform 2s ease-out;
+}
+.fly {
+  background-image: url(../images/back_top2.png);
+  -webkit-animation: fly .4s steps(1) infinite;
+  animation: fly .4s steps(1) infinite;
+}
+@keyframes fly {
+  0% {
+    background-position-x: 0;
+  }
+  25% {
+    background-position-x: -150px;
+  }
+  50% {
+    background-position-x: -300px;
+  }
+  75% {
+    background-position-x: -450px;
+  }
+  100% {
+    background-position-x: -600px;
+  }
+}
+
