@@ -28,8 +28,15 @@ p a {
 }
 .row .col-l-4 {
   flex: 33.333%;
+  margin-bottom: 0;
 }
 .row .col-s-6 {
+  /* 分配50%的空间 */
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.row .col-m-6 {
   /* 分配50%的空间 */
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
@@ -154,6 +161,7 @@ nav li a {
 /* 个人作品 */
 #works {
   background: url(../images/bg-2.png) fixed;
+  overflow: hidden;
 }
 .work-item {
   text-align: center;
@@ -255,5 +263,59 @@ footer a {
   100% {
     background-position-x: -600px;
   }
+}
+/* 兼容屏幕大小 */
+/* Small devices (landscape phones, 576px and up) */
+
+@media (max-width: 511px) {
+  .row .col-s-6 {
+    /* 分配50%的空间 */
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .row .col-s-12 {
+    /* 分配50%的空间 */
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 750px) { 
+  .row .col-l-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 992px) { 
+  .sidebar {
+    width: inherit;
+    position: relative;
+  }
+  .sidebar nav {
+    background: #f8bd24;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .main {
+    margin-left: 0;
+  }
+}
+@media (max-width: 400px) { 
+  .row [class*="col-s-"], .row [class*="col-m-"], .row [class*="col-l-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1em;
+}
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
 }
 
