@@ -1,10 +1,16 @@
 window.onload = function () {
   let backbtn = document.getElementsByClassName('backTop')[0];
   let timer = null; // 定义定时器
+  let isTop = true; // 中途可以停止返回顶部
   // 刷新页面判断火箭是否显示
   isshow();
   // 窗口滚动判断火箭是否显示
   window.onscroll = function () {
+    if(isTop === false){
+      clearInterval(timer);//当isTop变成了false的时候就不停止定时器
+      backbtn.style.transform = 'translateY(0)';
+    }
+    isTop = false; //当鼠标再次滚动的时候，isTop就变成了false
     isshow();
   }
   // 判断火箭现实与否
@@ -26,11 +32,12 @@ window.onload = function () {
   // 当点击小火箭，返货顶部，并且火箭上升
   backbtn.onclick = function () {
     timer = setInterval(() => {
+      isTop = true; //当点击按钮的时候，isTop为true，就不会清除定时器
       let ostop = document.documentElement.scrollTop || document.body.scrollTop;
       let ospeed = Math.ceil(ostop / 8);//先获取一个速度
       document.documentElement.scrollTop = document.body.scrollTop = ostop-ospeed;//由快到慢的速度
       backbtn.style.transform = 'translateY(-1000px)';
-      if ( ostop === 0 ){
+      if ( ostop === 0 ) {
         clearInterval(timer);
         backbtn.style.transform = 'translateY(0)';
       }
