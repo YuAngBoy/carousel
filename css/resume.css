@@ -265,7 +265,6 @@ footer a {
   }
 }
 /* 兼容屏幕大小 */
-/* Small devices (landscape phones, 576px and up) */
 
 @media (max-width: 511px) {
   .row .col-s-6 {
@@ -308,14 +307,5 @@ footer a {
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 1em;
+  }
 }
-}
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
-
-}
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
-
-}
-
