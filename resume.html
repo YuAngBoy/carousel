@@ -241,6 +241,7 @@
         </div>
       </div>
     </section>
+    <!-- 自我评价 -->
     <section id="selfEva">
       <div class="title"><i class="fas fa-eye-dropper "></i><h2>自我评价</h2></div>
       <div class="row">
@@ -252,40 +253,13 @@
         </div>
       </div>
     </section>
+    <!-- 最底部 -->
+    <footer>
+      <p>© 2018 By <a href="http://yuang.site">yuang</a></p>
+    </footer>
+    <!-- 回到顶部 -->
     <div class="backTop"></div>
   </div>
 </body>
-<script>
-  window.onload = function () {
-    let backbtn = document.getElementsByClassName('backTop')[0];
-    let timer = null;
-    window.onscroll = function () {
-      if (( document.documentElement.scrollTop || document.body.scrollTop ) > document.documentElement.clientHeight ){
-        backbtn.style.display = 'block';//如果滚条的高度大于窗口的高度，按钮就会显示出来，否则按钮消失
-      } else {
-        backbtn.style.display = 'none';
-      }
-    }
-    // 当鼠标移动到返回顶部按钮时，增加类fly
-    backbtn.onmouseover = function () {
-      this.classList.add('fly');
-    }
-    // 当鼠标移出的时候，删除类fly
-    backbtn.onmouseout = function () {
-      this.classList.remove('fly');
-    }
-    backbtn.onclick = function () {
-      timer = setInterval(() => {
-        let ostop = document.documentElement.scrollTop || document.body.scrollTop;
-        let ospeed = Math.ceil(ostop / 8);//先获取一个速度
-        document.documentElement.scrollTop = document.body.scrollTop = ostop-ospeed;//由快到慢的速度
-        backbtn.style.transform = 'translateY(-1000px)';
-        if ( ostop === 0 ){
-          clearInterval(timer);
-          backbtn.style.transform = 'translateY(0)';
-        }
-      },30);
-    }
-  }
-</script>
+<script src="js/resume.js"></script>
 </html>

@@ -86,7 +86,6 @@ nav {
   flex-direction: column;
 }
 nav li {
-  padding: 1em;
   list-style: none;
   text-align: center;
   transition: background .3s;
@@ -96,8 +95,10 @@ nav li:hover {
 }
 nav li a {
   display: block;
+  padding: 1em;
   color: #fff;
   width: 100%;
+  box-sizing: border-box;
   text-decoration: none;
 }
 /* 右边主体内容 */
@@ -209,6 +210,16 @@ nav li a {
   width: 100%;
   height: auto;
   vertical-align: middle;
+}
+/* 底部 */
+footer {
+  text-align: center;
+  padding: 1em 0;
+  background-color: #72655b;
+}
+footer p,
+footer a {
+  color: #fff;
 }
 /* 返回顶部 */
 .backTop {
